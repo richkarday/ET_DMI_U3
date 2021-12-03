@@ -1,0 +1,12 @@
+{
+    "info": {
+        "name": "Nombre",
+        "last_name": "Apellido",
+        "phone": "Telefono",
+        "address": "Dirección",
+        "actions": "Acciones"
+    },
+    "add": "Agregar Cliente",
+    "delete": "Borrar",
+    "cancel": "Cancelar" 
+}

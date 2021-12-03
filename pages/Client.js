@@ -3,9 +3,11 @@ import { StyleSheet, View, Button } from 'react-native';
 import { DataTable } from 'react-native-paper';
 import Modal from 'react-native-modal';
 import styled from 'styled-components/native';
+import i18n from '../localization/i18n';
 import axios from 'axios';
 
-const url = "http://localhost:3001/client";
+ const url = "http://localhost:3001/client";
+//const url = "http://192.168.1.221/client"
 
 const Delete = styled.TouchableOpacity`
   align-items: center;
@@ -107,14 +109,14 @@ export default function Client() {
 
   return (
     <View style={styles.container}>
-      <Button title="Add Client" onPress={toggleModal}/>
+      <Button title="Agregar Cliente" onPress={toggleModal}/>
       <DataTable>
         <DataTable.Header>
-          <DataTable.Title>Nombre</DataTable.Title>
-          <DataTable.Title>Apellido</DataTable.Title>
-          <DataTable.Title>Telefono</DataTable.Title>
-          <DataTable.Title>Dirección</DataTable.Title>
-          <DataTable.Title>Acciones</DataTable.Title>
+          <DataTable.Title>{i18n.t("info").name}</DataTable.Title>
+          <DataTable.Title>{i18n.t("info").last_name}</DataTable.Title>
+          <DataTable.Title>{i18n.t("info").phone}</DataTable.Title>
+          <DataTable.Title>{i18n.t("info").address}</DataTable.Title>
+          <DataTable.Title>{i18n.t("info").actions}</DataTable.Title>
         </DataTable.Header>
 
         {client.clientDB?.map(client => {
@@ -127,7 +129,7 @@ export default function Client() {
             <DataTable.Cell>
               <Delete  onPress={() => {deleteClient(client._id) 
               setDeletedClient(client._id)}}>
-                  <DeleteText>Delete</DeleteText>
+                  <DeleteText>{i18n.t("delete")}</DeleteText>
               </Delete>
             </DataTable.Cell>
           </DataTable.Row>
@@ -142,10 +144,10 @@ export default function Client() {
             <Input placeholder="Telefeno" onChange={(event) => {setTelefono(event.target.value)}}/>
             <Input placeholder="Dirección" onChange={(event) => {setDireccion(event.target.value)}}/>
             <Add onPress={() => addClient()}>
-                <AddText>ADD CLIENT</AddText>
+                <AddText>{i18n.t("add")}</AddText>
             </Add>
             <Cancel onPress={toggleModal}>
-                <CancelText>CANCEL</CancelText>
+                <CancelText>{i18n.t("cancel")}</CancelText>
             </Cancel>
           </ModalContainer>
       </Modal>

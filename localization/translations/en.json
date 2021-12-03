@@ -1,0 +1,12 @@
+{
+    "info": {
+        "name": "Name",
+        "last_name": "Last Name",
+        "phone": "Phone",
+        "address": "Address",
+        "actions": "Actions"
+    },
+    "add": "Add Client",
+    "delete": "Delete",
+    "cancel": "Cancel" 
+}
