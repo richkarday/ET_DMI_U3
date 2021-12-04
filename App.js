@@ -1,11 +1,15 @@
 import React from 'react';
-import Client from './pages/Client';
+import { registerRootComponent } from 'expo';
+
+// import Client from './pages/Client';
+import RentalBook  from './pages/RentalBook';
 
 export default function App() {
 
   return (
-    <Client/>
+    <RentalBook/>
   );
 }
+registerRootComponent(App);
 
 
