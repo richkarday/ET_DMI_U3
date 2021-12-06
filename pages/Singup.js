@@ -87,7 +87,7 @@ const SingupScreen = () => {
            />
              <FormInput
                 placeholderText = "Teléfono"
-                onChangeText = {(userPhone) => seTelefono(userPhone)}
+                onChangeText = {(userPhone) => setTelefono(userPhone)}
 
            />
              <FormInput
