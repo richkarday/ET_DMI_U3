@@ -102,6 +102,7 @@ const BookScreen = () =>{
     
       
     return(
+      <ScrollView>
         <View style={styles.container}>
             <Button title="Agregar Libro" onPress={toggleModal}/>
             <DataTable>
@@ -112,7 +113,6 @@ const BookScreen = () =>{
                     <DataTable.Title>{i18n.t("info").editorial}</DataTable.Title>
                     <DataTable.Title>{i18n.t("info").actions}</DataTable.Title>
                 </DataTable.Header>
-                <ScrollView>
                 {book.libros?.map(book => {
           return (
           <DataTable.Row key={book._id}>
@@ -129,7 +129,6 @@ const BookScreen = () =>{
           </DataTable.Row>
           )
         })}
-        </ScrollView>
             </DataTable>
             <Modal isVisible={isModalVisible}>
                 <ModalContainer>
@@ -146,6 +145,7 @@ const BookScreen = () =>{
                 </ModalContainer>
             </Modal>
         </View>
+        </ScrollView>
     );
 }
 
