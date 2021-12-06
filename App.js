@@ -6,9 +6,12 @@ import Tabs from './navigation/NavigationTabs';
 
 
 
+
 export default function App() {
 
   return (
     <Tabs />
   );
 }
+
+
