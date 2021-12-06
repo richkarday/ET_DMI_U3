@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Button } from 'react-native';
+import { StyleSheet, View, Button, ScrollView } from 'react-native';
 import { DataTable } from 'react-native-paper';
 import Modal from 'react-native-modal';
 import styled from 'styled-components/native';
@@ -108,6 +108,7 @@ export default function Client() {
   }
 
   return (
+    <ScrollView>
     <View style={styles.container}>
       <Button title="Agregar Cliente" onPress={toggleModal}/>
       <DataTable>
@@ -121,7 +122,7 @@ export default function Client() {
 
         {client.clientDB?.map(client => {
           return (
-          <DataTable.Row>
+          <DataTable.Row key={client._id}>
             <DataTable.Cell>{client.nombre}</DataTable.Cell>
             <DataTable.Cell>{client.apellido}</DataTable.Cell>
             <DataTable.Cell>{client.telefono}</DataTable.Cell>
@@ -152,6 +153,7 @@ export default function Client() {
           </ModalContainer>
       </Modal>
     </View>
+    </ScrollView>
   );
 }
 

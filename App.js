@@ -1,16 +1,14 @@
 import React from 'react';
-import { registerRootComponent } from 'expo';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Tabs from './navigation/NavigationTabs';
 
-// import Client from './pages/Client';
-import RentalBook  from './pages/RentalBook';
-import SingupScreen from './pages/Singup';
 
 export default function App() {
 
   return (
-    <SingupScreen/>
+    <Tabs />
   );
 }
-registerRootComponent(App);
 
 
