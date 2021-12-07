@@ -4,13 +4,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import Client from '../pages/Client';
 import BookScreen from '../pages/Book';
-import Rent from '../pages/Rent';
+import RentalBook from '../pages/RentalBook';
 
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
     return(
-        <NavigationContainer>
+        <NavigationContainer independent={true}>
             <Tab.Navigator 
             tabBarOptions={{
                 activeColor: 'blue',
@@ -41,7 +41,7 @@ const Tabs = () => {
                 }}/>
                 <Tab.Screen 
                 name="Rent"
-                component={Rent}
+                component={RentalBook}
                 options={{
                     tabBarIcon: ({ size, color })  => (
                         <Ionicons name="cash" size={size} color={color} />
