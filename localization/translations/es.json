@@ -1,12 +1,9 @@
 {
-    "info": {
-        "name": "Nombre",
-        "last_name": "Apellido",
-        "phone": "Telefono",
-        "address": "Dirección",
-        "actions": "Acciones"
-    },
-    "add": "Agregar Cliente",
-    "delete": "Borrar",
-    "cancel": "Cancelar" 
-}
+    "translation" : {
+      "login" : "Iniciar Sesion",
+      "email" : "Correo",
+      "password":"Contraseña",
+      "have_account":"Aun no tienes cuenta?",
+      "register_here":"Registrate aqui"
+    }
+  }

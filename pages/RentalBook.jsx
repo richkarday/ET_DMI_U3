@@ -7,7 +7,10 @@ import Modal from 'react-native-modal';
 import styled from 'styled-components/native';
 import { ArrowUpOutline } from 'react-ionicons'
 import { Carrusel } from './../components/carrusel'
+
 import axios from 'axios';
+import { useTranslation  } from 'react-i18next';
+
 
 const Container = styled.View`
     position:relative;
@@ -87,6 +90,7 @@ const Alert = styled.View`
 `
 
 function RentalBook() {
+    const [t, i18n] = useTranslation();
 
     //Declaracion de useSates 
 
@@ -320,7 +324,7 @@ function RentalBook() {
             </Container> : null}
             {showForm ? null :
                 <Container>
-                    <Button danger={ true } onClick={() => setshowForm(true)}><Text onClick={() => setshowForm(true)}>Crear Renta</Text></Button>
+                    <Button danger={ true } onClick={() => setshowForm(true)}><Text onClick={() => setshowForm(true)}>{t('Make rent')}</Text></Button>
                     <DataTable>
                         <DataTable.Header>
                             <DataTable.Title>Libro</DataTable.Title>

@@ -4,6 +4,7 @@ import FormInput from '../components/formInput';
 import FormButton from '../components/formButton';
 import { TouchableOpacity } from 'react-native';
 import axios from 'axios';
+import { Trans,useTranslation } from 'react-i18next';
 
 
 const Container = styled.View`
@@ -45,11 +46,11 @@ const ColorTextPrivate = styled.Text`
 `
 
 
-const Login = ({navigation}) => {
+const Login = ({ navigation }) => {
+    const { t } = useTranslation();
 
     const [correo, setCorreo] = useState("");
     const [password, setPassword] = useState("");
-
     const login = () => {
         try {
             axios.post("https://back-biblioteca.herokuapp.com/login", {
@@ -67,11 +68,23 @@ const Login = ({navigation}) => {
     const redirectSignup = () => {
         navigation.navigate('Singup')
     }
+    const placeholder = () => {
+        console.log(<StyledText>         
+            <Trans i18nKey="Login"></Trans>
+        </StyledText>);
+        return (
+
+            null
+        )
+    }
     return (
         <Container>
-            <StyledText>Login</StyledText>
+
+            <StyledText>         
+                <Trans i18nKey="login"></Trans>
+            </StyledText>
             <FormInput
-                placeholderText="Correo"
+                placeholderText={t('email')}
                 onChangeText={(correo) => setCorreo(correo)}
                 iconType="user"
                 autoCapitalize="none"
@@ -79,28 +92,24 @@ const Login = ({navigation}) => {
             />
 
 
+
             <FormInput
-                placeholderText="Password"
+                placeholderText={t('password')}
                 onChangeText={(userPassword) => setPassword(userPassword)}
                 iconType="lock"
                 secureTextEntry={true}
             />
             <FormButton
-                buttonTitle="Login"
+                buttonTitle={t('login')}
                 onPress={() => login()}
             />
             <TextPrivate>
-                <ColorTextPrivate> Don't have an account yet? </ColorTextPrivate>
+                <ColorTextPrivate> {t('have_account')} </ColorTextPrivate>
                 <TouchableOpacity onPress={() => redirectSignup()
                 }>
-                    <ColorTextPrivate style={{ color: '#e88832' }}> register here </ColorTextPrivate>
+                    <ColorTextPrivate style={{ color: '#e88832' }}> {t('register_here')} </ColorTextPrivate>
                 </TouchableOpacity>
-                <ColorTextPrivate> By registering, you confirm that you accept our </ColorTextPrivate>
-                <TouchableOpacity onPress={() => alert('Terms Clicked')}>
-                    <ColorTextPrivate style={{ color: '#e88832' }}> Terms of service </ColorTextPrivate>
-                </TouchableOpacity>
-                <ColorTextPrivate> and </ColorTextPrivate>
-                <ColorTextPrivate style={{ color: '#e88832' }}> Privacy Policy </ColorTextPrivate>
+               
             </TextPrivate>
 
         </Container>
