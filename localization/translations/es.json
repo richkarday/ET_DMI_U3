@@ -11,6 +11,7 @@
     "phone": "Numero Telefonico",
     "book": "Libros",
     "client": "Clientes",
+    "profile":"Perfil",
     "rental_book": "Renta de libros",
     "add_book": "Agregar Libro",
     "autor": "Autor",

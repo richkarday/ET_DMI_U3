@@ -21,8 +21,13 @@
     "@react-navigation/native-stack": "^6.2.5",
     "axios": "^0.24.0",
     "expo": "~43.0.2",
+    "expo-camera": "^12.0.3",
+    "expo-image-picker": "^11.0.3",
     "expo-localization": "~11.0.0",
+    "expo-media-library": "^13.0.3",
+    "expo-permissions": "^13.0.3",
     "expo-status-bar": "~1.1.0",
+    "firebase": "^8.7.1-20216817413",
     "i18n-js": "^3.8.0",
     "i18next": "^21.5.4",
     "i18next-browser-languagedetector": "^6.1.2",
@@ -42,6 +47,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@types/jest": "^27.0.3",
     "jest-expo": "^43.0.1",
     "react-test-renderer": "^17.0.2"
   },

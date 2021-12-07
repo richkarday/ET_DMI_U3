@@ -11,6 +11,7 @@
         "phone":"Phone Number",
         "book":"Books",
         "client":"Clients",
+        "profile":"Profile",
         "rental_book":"Book rental",
         "add_book":"Add book",
         "autor":"Author",

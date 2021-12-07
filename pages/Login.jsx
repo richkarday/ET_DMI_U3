@@ -56,9 +56,9 @@ const Login = ({ navigation }) => {
             axios.post("https://back-biblioteca.herokuapp.com/login", {
                 correo: correo,
                 password: password
-            }).then(() => {
+            }).then((resp) => {
                 navigation.navigate('Tabs')
-
+                localStorage.setItem('user',resp['data']['UsrDB']['_id'])
                 alert('Usuario ingreso correctamente')
             })
         } catch (err) {
@@ -67,15 +67,6 @@ const Login = ({ navigation }) => {
     }
     const redirectSignup = () => {
         navigation.navigate('Singup')
-    }
-    const placeholder = () => {
-        console.log(<StyledText>         
-            <Trans i18nKey="Login"></Trans>
-        </StyledText>);
-        return (
-
-            null
-        )
     }
     return (
         <Container>
