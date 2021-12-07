@@ -56,7 +56,7 @@ const SingupScreen = () => {
 
     const SignUp = () => {
         try {
-            axios.post("http://localhost:3001/usuario", {
+            axios.post("https://back-biblioteca.herokuapp.com/usuario", {
                 nombre: nombre,
                 apellido: apellido,
                 telefono: telefono,

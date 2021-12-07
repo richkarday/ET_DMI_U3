@@ -7,7 +7,7 @@ import i18n from '../localization/i18n';
 import axios from 'axios';
 import { Trans, useTranslation } from 'react-i18next';
 
-const url = "http://localhost:3001/libro";
+const url = "https://back-biblioteca.herokuapp.com/libro";
 
 const Delete = styled.TouchableOpacity`
   align-items: center;
