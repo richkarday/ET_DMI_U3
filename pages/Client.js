@@ -99,7 +99,10 @@ export default function Client() {
   const deleteClient = async (id) => {
     await axios.delete(`${url}/${id}`, {
     }).then(() => {
-      alert('Delete')
+      axios.get(url).then(response => {
+        console.log(response.data)
+        setClient(response.data);
+      });
     })
   }
 

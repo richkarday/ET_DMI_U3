@@ -47,11 +47,11 @@ const Select = styled.Picker`
 const Button = styled.TouchableOpacity`
     position:relative;
     margin:0 0 10px 0;
-    border:1px solid #4CAF50;
-    border-radius:5px;
+    border:1px solid #2196F3;
+    border-radius:4px;
     width:100%;
-    height:30px;
-    background-color: ${props => props.danger ? '#4CAF50' : 'red' };
+    height:35px;
+    background-color: ${props => props.danger ? '#2196F3' : 'red' };
     color: white;
     text-align:center;
 `

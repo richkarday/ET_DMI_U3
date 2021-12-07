@@ -34,7 +34,8 @@ const Tabs = () => {
                     tabBarIcon: ({ size, color }) => (
                         <Ionicons name="book" size={size} color={color} />
                     ),
-                    title: t('book')
+                    title: t('book'),
+                    headerShown: false
                 }} />
             <Tab.Screen
                 name={t('client')}
@@ -43,7 +44,9 @@ const Tabs = () => {
                     tabBarIcon: ({ size, color }) => (
                         <Ionicons name="people" size={size} color={color} />
                     ),
-                    title: t('client')
+                    title: t('client'),
+                    headerShown: false
+
                 }} />
             <Tab.Screen
                 name={t('rental_book')}
@@ -52,7 +55,9 @@ const Tabs = () => {
                     tabBarIcon: ({ size, color }) => (
                         <Ionicons name="cash" size={size} color={color} />
                     ),
-                    title: t('rental_book')
+                    title: t('rental_book'),
+                    headerShown: false
+
                 }} />
             <Tab.Screen
                 name='Profile'
@@ -61,7 +66,8 @@ const Tabs = () => {
                     tabBarIcon: ({ size, color }) => (
                         <Ionicons name="ios-list" size={size} color={color} />
                     ),
-                    title: t('profile')
+                    title: t('profile'),
+                    headerShown: false
                 }} />
 
         </Tab.Navigator>

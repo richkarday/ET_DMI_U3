@@ -90,6 +90,10 @@ const BookScreen = () => {
   const deleteBook = async (id) => {
     await axios.delete(`${url}/${id}`, {
     }).then(() => {
+      axios.get(url).then(response => {
+        console.log(response.data)
+        setBook(response.data);
+      });
       alert('Delete')
     })
   }

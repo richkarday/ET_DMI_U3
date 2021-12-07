@@ -46,7 +46,7 @@ const ColorTextPrivate = styled.Text`
 `
 
 
-const SingupScreen = () => {
+const SingupScreen = ({ navigation }) => {
     const { t } = useTranslation();
     const [nombre, setNombre] = useState("");
     const [apellido, setApellido] = useState("");
@@ -63,7 +63,7 @@ const SingupScreen = () => {
                 correo: correo,
                 password: password
             }).then(() => {
-                alert('Usuario registrado correctamente')
+                navigation.navigate('Login')
             })
         } catch (err) {
             console.log(err)
