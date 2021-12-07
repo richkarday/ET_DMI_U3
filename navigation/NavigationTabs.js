@@ -10,7 +10,7 @@ const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
     return(
-        <NavigationContainer>
+        <NavigationContainer independent={true}>
             <Tab.Navigator 
             tabBarOptions={{
                 activeColor: 'blue',
