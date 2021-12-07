@@ -9,7 +9,7 @@ import { ArrowUpOutline } from 'react-ionicons'
 import { Carrusel } from './../components/carrusel'
 
 import axios from 'axios';
-import { useTranslation  } from 'react-i18next';
+import { Trans,useTranslation } from 'react-i18next';
 
 
 const Container = styled.View`
@@ -90,7 +90,7 @@ const Alert = styled.View`
 `
 
 function RentalBook() {
-    const [t, i18n] = useTranslation();
+    const { t } = useTranslation();
 
     //Declaracion de useSates 
 
@@ -286,17 +286,17 @@ function RentalBook() {
                     minDate={Moment().startOf('day')}
                     maxDate={Moment().add(10, 'years').startOf('day')}
                 /> : null}
-                <Title>Rentar Libro</Title>
+                <Title>{t('rental_book')}</Title>
                 <Salto></Salto>
-                <Input type="text" value={libro} placeholder="Buscar Libro" onClick={() => setshowCarrusel(true)} onChange={e => setlibro(e.target.value)}></Input>
+                <Input type="text" value={libro} placeholder={t('search_book')} onClick={() => setshowCarrusel(true)} onChange={e => setlibro(e.target.value)}></Input>
                 <Salto></Salto>
                 {showCarrusel ? <Carrusel parentCallback={handleCallback} libros={libros}></Carrusel> : null}
-                <Input type="text" value={autor} placeholder="Autor"></Input>
+                <Input type="text" value={autor} placeholder={t('autor')}></Input>
                 <Salto></Salto>
-                <Input placeholder="Fecha Entrega" value={new Date(fecha).toLocaleDateString("en-US")} onClick={() => setshowCalendar(true)} ></Input>
+                <Input placeholder={t('deliver_date')} value={new Date(fecha).toLocaleDateString("en-US")} onClick={() => setshowCalendar(true)} ></Input>
                 <Salto></Salto>
                 <Select onChange={e => setClient(e.target.value)}>
-                    <Select.Item label="Seleccionar Cliente" value="1" />
+                    <Select.Item label={t('select_client')} value="1" />
                     {
                         usuariosid.map((usuario, key) => {
                             return (
@@ -306,33 +306,33 @@ function RentalBook() {
                     }
                 </Select>
                 <Salto></Salto>
-                <Input type="text" placeholder="Nombre" value={nombre} onChange={e => setnombre(e.target.value)}></Input>
+                <Input type="text" placeholder={t('name')} value={nombre} onChange={e => setnombre(e.target.value)}></Input>
                 <Salto></Salto>
-                <Input type="text" placeholder="Apellido" value={apellido} onChange={e => setapellido(e.target.value)}></Input>
+                <Input type="text" placeholder={t('last_name')} value={apellido} onChange={e => setapellido(e.target.value)}></Input>
                 <Salto></Salto>
-                <Input type="text" placeholder="Telefono" value={telefono} onChange={e => settelefono(e.target.value)}></Input>
+                <Input type="text" placeholder={t('phone')} value={telefono} onChange={e => settelefono(e.target.value)}></Input>
                 <Salto></Salto>
-                <Input type="text" placeholder="Email" value={email} onChange={e => setemail(e.target.value)}></Input>
+                <Input type="text" placeholder={t('email')} value={email} onChange={e => setemail(e.target.value)}></Input>
                 <Salto></Salto>
-                <Input type="text" placeholder="Direccion" value={direccion} onChange={e => setdireccion(e.target.value)}></Input>
+                <Input type="text" placeholder={t('address')} value={direccion} onChange={e => setdireccion(e.target.value)}></Input>
                 <Salto></Salto>
                 <Input type="text" value={"$" + total + ".00"}></Input>
                 <Salto></Salto>
-                <Button danger={ true } onClick={() => createRental()}><Text onClick={() => createRental()}>Rentar</Text></Button>
-                <Button danger={ false } onClick={() => setshowForm(false)}><Text onClick={() => setshowForm(false)}>Cerrar</Text></Button>
+                <Button danger={ true } onClick={() => createRental()}><Text onClick={() => createRental()}>{t('create')}</Text></Button>
+                <Button danger={ false } onClick={() => setshowForm(false)}><Text onClick={() => setshowForm(false)}>{t('cancel')}</Text></Button>
 
             </Container> : null}
             {showForm ? null :
                 <Container>
-                    <Button danger={ true } onClick={() => setshowForm(true)}><Text onClick={() => setshowForm(true)}>{t('Make rent')}</Text></Button>
+                    <Button danger={ true } onClick={() => setshowForm(true)}><Text onClick={() => setshowForm(true)}>{t('create_renta')}</Text></Button>
                     <DataTable>
                         <DataTable.Header>
-                            <DataTable.Title>Libro</DataTable.Title>
-                            <DataTable.Title>Cliente</DataTable.Title>
+                            <DataTable.Title>{t('book')}</DataTable.Title>
+                            <DataTable.Title>{t('client')}</DataTable.Title>
                             {/* <DataTable.Title>Telefono</DataTable.Title> */}
                             {/* <DataTable.Title>Fecha Entrega</DataTable.Title> */}
-                            <DataTable.Title>Cargos</DataTable.Title>
-                            <DataTable.Title>Accion</DataTable.Title>
+                            <DataTable.Title>{t('charges')}</DataTable.Title>
+                            <DataTable.Title>{t('actions')}</DataTable.Title>
                         </DataTable.Header>
                         {renta?.map((renta, key) => {
                             return (
@@ -342,7 +342,7 @@ function RentalBook() {
                                     {/* <DataTable.Cell>{renta.telefono}</DataTable.Cell> */}
                                     {/* <DataTable.Cell>{renta.fecha_entrega}</DataTable.Cell> */}
                                     <DataTable.Cell>${renta.cargos}.00</DataTable.Cell>
-                                    <DataTable.Cell><Button danger={ true } onClick={() => delteRental(renta._id, key)}><Text onClick={() => delteRental(renta._id, key)}>Entregado</Text></Button></DataTable.Cell>
+                                    <DataTable.Cell><Button danger={ true } onClick={() => delteRental(renta._id, key)}><Text onClick={() => delteRental(renta._id, key)}>{t('delivered')}</Text></Button></DataTable.Cell>
                                 </DataTable.Row>
                             )
                         })}

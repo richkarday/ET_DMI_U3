@@ -1,9 +1,33 @@
 {
-    "translation" : {
-      "login" : "Iniciar Sesion",
-      "email" : "Correo",
-      "password":"Contraseña",
-      "have_account":"Aun no tienes cuenta?",
-      "register_here":"Registrate aqui"
-    }
+  "translation": {
+    "login": "Iniciar Sesion",
+    "email": "Correo",
+    "password": "Contraseña",
+    "have_account": "Aun no tienes cuenta?",
+    "register_here": "Registrate aqui",
+    "create_account": "Crear una cuenta",
+    "name": "Nombre",
+    "last_name": "Apellido",
+    "phone": "Numero Telefonico",
+    "book": "Libros",
+    "client": "Clientes",
+    "rental_book": "Renta de libros",
+    "add_book": "Agregar Libro",
+    "autor": "Autor",
+    "category": "Categoria",
+    "editorial": "Editorial",
+    "delete": "Eliminar",
+    "cancel": "Cancelar",
+    "actions":"Acciones",
+    "add_client":"Agregar cliente",
+    "address":"Direccion",
+    "search_book":"Buscar libro",
+    "deliver_date":"Fecha entrega",
+    "select_client":"Seleccionar Cliente",
+    "create":"Crear",
+    "create_renta":"Crear renta",
+    "charges":"Cargos",
+    "delivered":"Entregado",
+    "By_registering_you_confirm_that_you_accept_our": "Al registrarse, confirma que acepta nuestros"
   }
+}
